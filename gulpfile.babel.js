@@ -4,4 +4,4 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import requireDir from 'require-dir';
 
 gulpLoadPlugins();
-requireDir('./gulp/tasks',{recurse:true});
+requireDir('./gulp',{recurse:true});

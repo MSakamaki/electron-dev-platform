@@ -1,8 +1,8 @@
 const gulp = require('gulp');
 const jscs = require('gulp-jscs');
 
-gulp.task('default', () => {
-    return gulp.src('src/app.js')
+gulp.task('jscs', () => {
+    return gulp.src('src/**/*.js')
         .pipe(jscs({fix: true}))
         .pipe(jscs.reporter())
         .pipe(jscs.reporter('fail'))
