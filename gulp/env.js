@@ -5,6 +5,6 @@ export default {
     gulp: 'gulp',
   },
   file: {
-    concat: 'index.js'
-  }
+    concat: 'index.js',
+  },
 };
