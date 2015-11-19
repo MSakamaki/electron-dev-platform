@@ -1,3 +1,5 @@
 const gulp = require('gulp');
- 
-gulp.task( 'copy', ()=>gulp.src( 'src/**/*.html'  ).pipe( gulp.dest( '.build') ));
+
+gulp.task('copy:build', ()=>
+  gulp.src('src/**/*.html')
+    .pipe(gulp.dest('.build')));

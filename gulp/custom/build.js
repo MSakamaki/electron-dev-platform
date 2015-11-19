@@ -1,3 +1,3 @@
 const gulp = require('gulp');
- 
-gulp.task('build', []);
+
+gulp.task('build', ['clean:build', 'babel', 'copy:build']);
