@@ -1,2 +1,3 @@
 
-console.log('hello babel babel ');
+var app = document.querySelector('#app');
+app.innerHTML = 'HELLO BABEL APP !';
