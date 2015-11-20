@@ -3,21 +3,19 @@ const gulpDep = require('gulp-description');
 const description = {
     main:[
       'build',
-      'debug',
+      'serve',
       'default',
       'help',
     ],
     description:{
-      babel:'babel compile',
       build:'electron relece build',
-      'clean:build':'build directory clean',
-      'copy:build':'copy build files',
-      debug:'start development',
       default:'non tasks',
+      serve: 'start development',
       'h:dep':'gulp tasks dependency',
       'h:ls':'show gulp all task',
       help:'view help',
       jscs:'jscs fix',
+      watch: 'livereload task',
     },
   };
 

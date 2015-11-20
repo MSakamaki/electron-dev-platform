@@ -1,3 +1,3 @@
 const gulp = require('gulp');
 
-gulp.task('build', ['clean:build', 'babel', 'copy:build']);
+gulp.task('build', ()=> console.log('comming soon...'));

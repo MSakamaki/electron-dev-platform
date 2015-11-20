@@ -1,7 +1,6 @@
 export default {
   dir: {
-    src: 'src',
-    build: '.build',
+    src: 'src/browser',
     gulp: 'gulp',
   },
   file: {
