@@ -1,2 +1,6 @@
 node_modules/
-src/jspm_packages
+src/browser/jspm_packages
+dest/
+dist/
+typings/
+.DS_Store
