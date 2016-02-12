@@ -2,8 +2,14 @@ import env from '../env';
 
 const gulp = require('gulp');
 const exec = require('child_process').exec;
-const livereload = require('gulp-livereload');
+const runSequence = require('run-sequence');
 
-gulp.task('serve', ['watch'], ()=> {
-  exec('electron src/main.js');
-});
+gulp.task('serve', cb=>
+  runSequence(
+    'clean',
+    'ts',
+    'watch',
+    'exec:electron',
+    cb));
+
+gulp.task('exec:electron', ()=>exec('ENVIRONMENT=dev electron dest/platform/index.js'));

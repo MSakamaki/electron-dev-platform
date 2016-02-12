@@ -10,10 +10,9 @@
     We are using Node.js <script>document.write(process.version)</script>
     and Electron <script>document.write(process.versions['electron'])</script>.
   </body>
+  <!-- jspm:application -->
   <script src="jspm_packages/system.js"></script>
   <script src="config.js"></script>
-  <script>
-    System.import('./browser/app');
-  </script>
+  <script> System.import('app');</script>
   <script src="http://localhost:35729/livereload.js"></script>
 </html>
