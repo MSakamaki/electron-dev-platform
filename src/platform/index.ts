@@ -1,59 +1,53 @@
 /// <reference path="../../typings/github-electron/github-electron.d.ts" />
 /// <reference path="../../typings/node/node.d.ts" />
+/// <reference path="./config/env.d.ts" />
+/// <reference path="./config/env.ts" />
 
+const envConfig = Config.env;
 const path = require('path');
+// electron API : https://github.com/atom/electron/tree/master/docs/api
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const appEnv = process.env.ENVIRONMENT || 'dist';
 
-// https://github.com/atom/electron/blob/master/docs/api/browser-window.md
-let mainWindow: Electron.BrowserWindow;
-// https://github.com/atom/electron/blob/master/docs/api/web-contents.md
-//let webCnt: Electron.WebContents; 
+class Application {
 
-let appEnv: string = process.env.ENVIRONMENT || 'dist';
+   private mainWindow: Electron.BrowserWindow;
+   private Menu = electron.Menu;
+   private appUrl: string;
 
-let envConfig: {
-    [index: string]: {
-        src: string;
-        debug: (webContents :Electron.WebContents) => any;
+   constructor(public app: Electron.App){
+       this.app.on('window-all-closed', this.windowAllClosed);
+       this.app.on('ready', this.ready);
+       this.app.on('activate', this.activate);
+   }
+    
+   ready() {
+      this.mainWindow = new BrowserWindow({width: 800, height: 600});
+
+      this.appUrl = `file://${path.join(__dirname, envConfig[appEnv].src, 'browser/index.html')}`;
+
+      this.mainWindow.loadURL(this.appUrl);
+      // debug
+      envConfig[appEnv].debug(this.mainWindow.webContents);
+
+      this.mainWindow.on('closed', function() {
+            this.mainWindow = null;
+      });
+   }
+    
+   windowAllClosed() {
+     if (process.platform !== 'darwin') {
+       this.app.quit();
+     }
+   }
+
+   activate() {
+     if (this.mainWindow === null) {
+      this.ready();
     }
-} = {
-    dev: {
-        src : '../../src',
-        debug: (webContents :Electron.WebContents)=> webContents.openDevTools(),
-    },
-    dist: {
-        src: '.',
-        debug: (webContents :Electron.WebContents)=> void 0,
-    }
-};
-
-
-let appUrl: string = `file://${path.join(__dirname, envConfig[appEnv].src, 'browser/index.html')}`;
-
-function createWindow () {
-  mainWindow = new BrowserWindow({width: 800, height: 600});
-
-  mainWindow.loadURL(appUrl);
-  // debug
-  envConfig[appEnv].debug(mainWindow.webContents);
-
-  mainWindow.on('closed', function() {
-    mainWindow = null;
-  });
+  }
 }
 
-app.on('ready', createWindow);
-
-app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
-app.on('activate', function () {
-  if (mainWindow === null) {
-    createWindow();
-  }
-});
+const _APP = new Application(app);

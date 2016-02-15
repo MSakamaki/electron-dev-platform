@@ -12,4 +12,4 @@ gulp.task('serve', cb=>
     'exec:electron',
     cb));
 
-gulp.task('exec:electron', ()=>exec('ENVIRONMENT=dev electron dest/platform/index.js'));
+gulp.task('exec:electron', ()=>exec('ENVIRONMENT=dev electron dest/compile/index.js'));
