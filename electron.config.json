@@ -1,8 +1,8 @@
 {
     "osx" : {
         "title": "Electron Builder Example",
-        "background": "assets/installer.png",
-        "icon": "assets/mount.icns",
+        "background": "assets/images/installer.png",
+        "icon": "assets/images/mount.icns",
         "icon-size": 80,
         "contents": [
           { "x": 210, "y": 100, "type": "link", "path": "/Applications" },
@@ -11,7 +11,7 @@
     },
     "win" : {
         "title" : "Electron Builder Example",
-        "icon" : "assets/icon.ico"
+        "icon" : "assets/images/icon.ico"
     },
     "linux" : {
         "arch" : 64,

@@ -14,6 +14,6 @@ describe('angularjs homepage todo list', function() {
       .then(()=>{
           expect(elmHello.getText()).toBe('HELLO BABEL APP !');
           done();
-      })
+      });
   });
 });

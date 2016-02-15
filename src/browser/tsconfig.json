@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "system",
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "typeCheck": true,
+        "tsconfig": true,
+        "removeComments": true
+    }
+}

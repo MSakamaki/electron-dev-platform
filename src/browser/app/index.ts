@@ -1,4 +1,3 @@
-
 import './main.css!';
 
 var app:Element = document.querySelector('#app');
