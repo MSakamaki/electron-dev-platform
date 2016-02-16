@@ -5,13 +5,14 @@
   "main": "dest/index.js",
   "scripts": {
     "test": "-",
-    "preinstall": "jspm install && tsd install"
+    "install": "node_modules/.bin/jspm install && node_modules/.bin/tsd install"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.5.1",
     "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.5.2",
     "del": "^2.2.0",
     "electron-builder": "^2.7.2",
     "electron-packager": "^5.2.1",
@@ -32,6 +33,7 @@
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
     "systemjs": "^0.19.20",
+    "tsd": "^0.6.5",
     "typescript": "^1.7.5"
   },
   "dependencies": {},
