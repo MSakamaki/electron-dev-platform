@@ -24,7 +24,9 @@ function string_src(filename, pkg) {
 
 gulp.task('writePackageJson', function () {
   var pkg = require(`${process.cwd()}/package.json`);
+  console.log('pkg', env.dir.compile)
   return string_src("package.json", pkg)
+  .pipe(require('gulp-debug')())
     .pipe(gulp.dest(env.dir.compile))
 });
 

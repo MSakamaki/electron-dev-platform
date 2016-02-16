@@ -7,7 +7,7 @@ const extension = {
 
 const path = {
   root: process.cwd(),
-  src: 'src/browser',
+  browser: 'src/browser',
   platform: 'src/platform',
   gulp: 'gulp',
   dest: 'dest',
@@ -21,7 +21,11 @@ const src = {
     test:[`${path.platform}/**/?(*spec).ts`],
   },
   browser:{
-    src:[`${path.browser}/**/!(*spec).ts`],
+    script:[`${path.browser}/**/!(*spec).ts`],
+    html:[
+      `${path.browser}/**/*.html`,
+      `!${path.browser}/jspm_packages/**/*.html`,
+    ],
   },
 };
 

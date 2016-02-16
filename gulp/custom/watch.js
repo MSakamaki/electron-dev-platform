@@ -3,17 +3,11 @@ import env from '../env';
 const gulp = require('gulp');
 let livereload = require('gulp-livereload');
 
-let script = [
-    `${env.dir.browser}/**/*.js`,
-    `${env.dir.browser}/**/*.ts`,
-];
-let html = `${env.dir.browser}/**/*.html`;
-
 gulp.task('watch', ()=> {
   livereload.listen();
 
-  gulp.watch(script)
-    .on('change', (event)=> gulp.src(script).pipe(livereload()));
+  gulp.watch(env.src.browser.script)
+    .on('change', (event)=> gulp.src(env.src.browser.script).pipe(livereload()));
 
-  gulp.watch(html, ()=> gulp.src(html).pipe(livereload()));
+  gulp.watch(env.src.browser.html, ()=> gulp.src(env.src.browser.html).pipe(livereload()));
 });
