@@ -1,6 +1,7 @@
 node_modules/
 src/browser/jspm_packages
-dest/
-dist/
+dest/*
+dist/*
 typings/
 .DS_Store
+npm-debug.log

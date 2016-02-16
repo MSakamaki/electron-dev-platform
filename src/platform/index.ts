@@ -33,7 +33,7 @@ class Main {
 
     // create menu
     const menuApp = new SystemMenu.Application(electron);
-    const menuContext = new SystemMenu.Context(electron);
+    //const menuContext = new SystemMenu.Context(electron);
 
     this.mainWindow.on('closed', function() {
       this.mainWindow = null;

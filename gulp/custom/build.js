@@ -11,7 +11,6 @@ gulp.task('build:osx', cb=>
     'clean',
     ['ts', 'jspm_bundle', 'copy:browser', 'writePackageJson'],
     'pack:osx',
-    'electron_installer:osx',
     cb));
 
 gulp.task('build:win', cb=>
@@ -19,7 +18,14 @@ gulp.task('build:win', cb=>
     'clean',
     ['ts', 'jspm_bundle', 'copy:browser', 'writePackageJson'],
     'pack:win',
-    'electron_installer:win',
     cb));
+
+gulp.task('build:win32', cb=>
+  runSequence(
+    'clean',
+    ['ts', 'jspm_bundle', 'copy:browser', 'writePackageJson'],
+    'pack:win32',
+    cb));
+
 
 

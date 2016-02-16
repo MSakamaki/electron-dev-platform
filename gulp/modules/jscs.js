@@ -5,7 +5,7 @@ const jscs = require('gulp-jscs');
 
 gulp.task('jscs', ()=>
   Promise.all([
-    env.dir.src,
+    env.dir.browser,
     env.dir.gulp,
   ].map(dir=>
     gulp.src(`${dir}/**/*.js`)

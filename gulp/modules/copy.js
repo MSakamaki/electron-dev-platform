@@ -5,7 +5,7 @@ const replace = require('gulp-replace');
 
 gulp.task('copy:browser', ()=>
   gulp.src([
-      `${env.dir.src}/**/*.html`
+      `${env.dir.browser}/**/*.html`
   ])
   .pipe(replace(new RegExp('(<!-- jspm:application -->|<script.*</script>)', 'g'), (i)=>{
       if (i === '<!-- jspm:application -->'){

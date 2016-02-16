@@ -4,10 +4,10 @@ const gulp = require('gulp');
 let livereload = require('gulp-livereload');
 
 let script = [
-    `${env.dir.src}/**/*.js`,
-    `${env.dir.src}/**/*.ts`,
+    `${env.dir.browser}/**/*.js`,
+    `${env.dir.browser}/**/*.ts`,
 ];
-let html = `${env.dir.src}/**/*.html`;
+let html = `${env.dir.browser}/**/*.html`;
 
 gulp.task('watch', ()=> {
   livereload.listen();
