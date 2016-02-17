@@ -3,6 +3,8 @@
 
 ### task
 
+#### install
+
 ```sh
 # global module
 npm -g install gulp jspm tsd karma
@@ -10,10 +12,34 @@ npm -g install gulp jspm tsd karma
 # install
 npm install
 
-# use command
+# use command help
 gulp help
 ```
 
+#### develop
+
+```sh
+gulp serve
+```
+
+#### build
+
+```sh
+# compile
+gulp build:compile
+
+
+# platform build 
+# - osx
+gulp build:osx
+
+# - windows 64bit
+gulp build:win
+
+# - windows 32bit
+gulp build:win32
+
+```
 
 ### Required for Windows environment build (windows os Recommended)
 

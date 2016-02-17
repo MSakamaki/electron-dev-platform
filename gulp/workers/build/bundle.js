@@ -5,7 +5,7 @@ const gulp = require('gulp');
 const exec = require('child_process').exec;
 const Readable = require('stream').Readable;
 
-gulp.task('jspm_bundle', ()=>exec(`jspm bundle-sfx app ${env.dir.compile}/browser/app.js`));
+gulp.task('jspmBundle', ()=>exec(`jspm bundle-sfx app ${env.dir.compile}/browser/app.js`));
 
 function string_src(filename, pkg) {
   var src = new Readable({ objectMode: true })
@@ -24,9 +24,7 @@ function string_src(filename, pkg) {
 
 gulp.task('writePackageJson', function () {
   var pkg = require(`${process.cwd()}/package.json`);
-  console.log('pkg', env.dir.compile)
   return string_src("package.json", pkg)
-  .pipe(require('gulp-debug')())
     .pipe(gulp.dest(env.dir.compile))
 });
 

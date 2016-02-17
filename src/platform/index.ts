@@ -5,11 +5,11 @@
 /// <reference path="./menu/createMenu.ts" />
 /// <reference path="./menu/createMenu.d.ts" />
 
-const envConfig = Config.env;
 const path = require('path');
 // electron API : https://github.com/atom/electron/tree/master/docs/api
-const electron = require('electron');
-const appEnv = process.env.ENVIRONMENT || 'dist';
+const electron: Electron.ElectronMainAndRenderer = require('electron');
+let appEnv: string = process.env.ENVIRONMENT || 'dist';
+const envConf: Config.envConfigItem = Config.env[appEnv];
 
 class Main {
 
@@ -25,15 +25,15 @@ class Main {
   ready() {
     this.mainWindow = new electron.BrowserWindow({ width: 800, height: 600 });
 
-    this.appUrl = `file://${path.join(__dirname, envConfig[appEnv].src, 'browser/index.html')}`;
+    this.appUrl = `file://${path.join(__dirname, envConf.src, 'browser/index.html')}`;
 
     this.mainWindow.loadURL(this.appUrl);
     // debug
-    envConfig[appEnv].debug(this.mainWindow.webContents);
+    envConf.debug(this.mainWindow.webContents);
 
     // create menu
     const menuApp = new SystemMenu.Application(electron);
-    //const menuContext = new SystemMenu.Context(electron);
+    const menuContext = new SystemMenu.Context(electron);
 
     this.mainWindow.on('closed', function() {
       this.mainWindow = null;

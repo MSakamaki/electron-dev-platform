@@ -8,17 +8,20 @@ const extension = {
 const path = {
   root: process.cwd(),
   browser: 'src/browser',
+  assets: 'src/assets',
   platform: 'src/platform',
   gulp: 'gulp',
   dest: 'dest',
   dist: 'dist',
   compile: 'dest/compile',
+  pack: 'dest/pack',
 };
 
 const src = {
   platform:{
     src:[`${path.platform}/**/!(*spec).ts`],
     test:[`${path.platform}/**/?(*spec).ts`],
+    asset:[`${path.assets}/common/**/*`]
   },
   browser:{
     script:[`${path.browser}/**/!(*spec).ts`],
@@ -35,7 +38,13 @@ const env = {
   electron: {
     appName: 'exampleApp',
     version: '0.36.7',
-    buildName: (platform, arch) => `${env.electron.appName}-${platform}-${arch}/${env.electron.appName}.${extension[platform]}`,
+    buildName: (platform, arch) => {
+      let ElectronPlatformPath = {
+        win32:`${env.electron.appName}-${platform}-${arch}/`,
+        darwin: `${env.electron.appName}-${platform}-${arch}/${env.electron.appName}.${extension[platform]}`,
+      };
+      return ElectronPlatformPath[platform];
+    },
     config: APP_CONF,
   },
   file: {

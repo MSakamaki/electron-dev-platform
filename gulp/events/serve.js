@@ -6,8 +6,8 @@ const runSequence = require('run-sequence');
 
 gulp.task('serve', cb=>
   runSequence(
-    'clean',
-    'ts',
+    'clean:compile',
+    ['ts', 'copy:assets'],
     'watch',
     'exec:electron',
     cb));

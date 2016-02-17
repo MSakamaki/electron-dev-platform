@@ -13,7 +13,7 @@ export default class ConfigGenerator {
   packager() {
     return {
       dir: env.dir.compile,
-      out: env.dir.dest,
+      out: env.dir.pack,
       name: env.electron.appName,
       arch: this.arch,
       platform: this.platform,
@@ -22,7 +22,7 @@ export default class ConfigGenerator {
   }
   builder() {
     return {
-      appPath: `${env.dir.dest}/${env.electron.buildName(this.platform, this.arch) }`,
+      appPath: `${env.dir.pack}/${env.electron.buildName(this.platform, this.arch) }`,
       platform: renamedBuilderPlatform[this.platform],
       basePath: `${env.dir.root}`,
       out: env.dir.dist,
