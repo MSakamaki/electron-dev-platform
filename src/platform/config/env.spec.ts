@@ -1,7 +1,6 @@
 /// <reference path="../../../typings/node/node.d.ts" />
 /// <reference path="../../../typings/jasmine/jasmine.d.ts" />
 /// <reference path="./env.d.ts" />
-/// <reference path="./env.ts" />
 
 import * as common from '../config/env';
 

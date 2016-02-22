@@ -3,7 +3,8 @@ node_js:
   - "4"
   - "5"
 before_script:
-  - npm install -g gulp
+  - npm install -g gulp jspm tsd karma
+  - jspm registry config github
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - gulp test

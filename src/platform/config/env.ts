@@ -3,12 +3,12 @@
 export namespace Config {
     export var env: envConfigs = {
       dev: {
-        src: '../../src',
+        src: '../../../src',
         assetDir: '../assets/common',
         debug: (webContents: Electron.WebContents) => webContents.openDevTools(),
       },
       dist: {
-        src: '.',
+        src: '../',
         assetDir: 'assets',
         debug: (webContents: Electron.WebContents) => void 0,
       }
