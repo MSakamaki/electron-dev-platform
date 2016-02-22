@@ -3,7 +3,7 @@ node_js:
   - "4"
   - "5"
 before_install:
-  - npm install -g gulp jspm tsd karma
+  - npm install -g gulp jspm@0.17.0-beta.7 tsd karma
   - jspm registry config github -y
 before_script:
   - export DISPLAY=:99.0

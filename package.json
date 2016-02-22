@@ -29,7 +29,7 @@
     "gulp-util": "^3.0.7",
     "istanbul": "^0.4.2",
     "jasmine": "^2.4.1",
-    "jspm": "^0.16.27",
+    "jspm": "^0.17.0-beta.7",
     "karma-typescript-preprocessor": "0.0.21",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
