@@ -4,7 +4,7 @@ node_js:
   - "5"
 before_install:
   - npm install -g gulp jspm tsd karma
-  - jspm registry config github
+  - jspm registry config github -y
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
