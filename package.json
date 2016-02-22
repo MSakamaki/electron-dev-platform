@@ -44,7 +44,7 @@
     },
     "dependencies": {
       "css": "github:systemjs/plugin-css@^0.1.20",
-      "ts": "github:frankwallis/plugin-typescript@^3.0.2"
+      "ts": "github:frankwallis/plugin-typescript@^4.0.0"
     },
     "devDependencies": {
       "clean-css": "npm:clean-css@^3.4.9",
@@ -62,6 +62,7 @@
       "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "readline": "github:jspm/nodelibs-readline@^0.2.0-alpha",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
       "util": "github:jspm/nodelibs-util@^0.2.0-alpha"
@@ -73,18 +74,6 @@
         ]
       },
       "npm:typescript@1.8.0": {
-        "browser": {},
-        "map": {
-          "buffer": "@empty",
-          "child_process": "@empty",
-          "fs": "@empty",
-          "os": "@empty",
-          "path": "@empty",
-          "process": "@empty",
-          "readline": "@empty"
-        }
-      },
-      "npm:typescript@1.9.0-dev.20160211": {
         "browser": {},
         "map": {
           "buffer": "@empty",

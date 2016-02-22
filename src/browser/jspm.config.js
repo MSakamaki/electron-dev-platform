@@ -27,9 +27,9 @@ SystemJS.config({
         }
       }
     },
-    "github:frankwallis/plugin-typescript@3.0.2": {
+    "github:frankwallis/plugin-typescript@4.0.0": {
       "map": {
-        "typescript": "npm:typescript@1.9.0-dev.20160211"
+        "typescript": "npm:typescript@1.9.0-dev.20160221"
       }
     },
     "github:jspm/nodelibs-buffer@0.2.0-alpha": {
@@ -144,8 +144,9 @@ SystemJS.config({
     "os": "github:jspm/nodelibs-os@0.2.0-alpha",
     "path": "github:jspm/nodelibs-path@0.2.0-alpha",
     "process": "github:jspm/nodelibs-process@0.2.0-alpha",
+    "readline": "github:jspm/nodelibs-readline@0.2.0-alpha",
     "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
-    "ts": "github:frankwallis/plugin-typescript@3.0.2",
+    "ts": "github:frankwallis/plugin-typescript@4.0.0",
     "typescript": "npm:typescript@1.8.0",
     "url": "github:jspm/nodelibs-url@0.2.0-alpha",
     "util": "github:jspm/nodelibs-util@0.2.0-alpha"
