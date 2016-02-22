@@ -1,15 +1,18 @@
 /// <reference path="../../typings/github-electron/github-electron.d.ts" />
 /// <reference path="../../typings/node/node.d.ts" />
 /// <reference path="./config/env.d.ts" />
-/// <reference path="./config/env.ts" />
-/// <reference path="./menu/createMenu.ts" />
 /// <reference path="./menu/createMenu.d.ts" />
+/// <reference path="./menu/createMenu.ts" />
 
 const path = require('path');
 // electron API : https://github.com/atom/electron/tree/master/docs/api
 const electron: Electron.ElectronMainAndRenderer = require('electron');
 let appEnv: string = process.env.ENVIRONMENT || 'dist';
-const envConf: Config.envConfigItem = Config.env[appEnv];
+
+import * as common from './config/env';
+import * as menu from './menu/createMenu';
+
+const envConf: common.Config.envConfigItem = common.Config.env[appEnv];
 
 class Main {
 
@@ -32,8 +35,8 @@ class Main {
     envConf.debug(this.mainWindow.webContents);
 
     // create menu
-    const menuApp = new SystemMenu.Application(electron);
-    const menuContext = new SystemMenu.Context(electron);
+    const menuApp = new menu.SystemMenu.Application(electron);
+    const menuContext = new menu.SystemMenu.Context(electron);
 
     this.mainWindow.on('closed', function() {
       this.mainWindow = null;

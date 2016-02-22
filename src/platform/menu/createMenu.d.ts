@@ -1,7 +1,7 @@
 /// <reference path="../../../typings/github-electron/github-electron.d.ts" />
 /// <reference path="../../../typings/node/node.d.ts" />
 
-declare module "SystemMenu" {
+export declare namespace SystemMenu {
     class Application {
         private electron: Electron.ElectronMainAndRenderer;
         private appIcon;

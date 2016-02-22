@@ -27,6 +27,8 @@
     "gulp-replace": "^0.5.4",
     "gulp-typescript": "^2.11.0",
     "gulp-util": "^3.0.7",
+    "istanbul": "^0.4.2",
+    "jasmine": "^2.4.1",
     "jspm": "^0.16.27",
     "karma-typescript-preprocessor": "0.0.21",
     "require-dir": "^0.3.0",
