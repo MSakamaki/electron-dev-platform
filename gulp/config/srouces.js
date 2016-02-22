@@ -2,7 +2,9 @@ import path from './rootPaths';
 
 const SOURCE = {
   platform: {
-    src: [`${path.platform}/**/!(*spec).ts`],
+    src: [
+      `${path.platform}/**/!(*spec).ts`
+      ],
     test: [
       '!src/platform/index.ts',
       'src/platform/**/*.ts'

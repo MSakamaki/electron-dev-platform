@@ -23,4 +23,5 @@ export namespace Config {
       assetDir: string;
       debug: (webContents: Electron.WebContents) => any;
     }
+//  }
 }
