@@ -4,7 +4,7 @@
   "description": "electron development platform template",
   "main": "dest/index.js",
   "scripts": {
-    "test": "-",
+    "test": "gulp test",
     "install": "node_modules/.bin/jspm install && node_modules/.bin/tsd install"
   },
   "author": "",
