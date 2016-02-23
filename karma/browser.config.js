@@ -1,8 +1,5 @@
 module.exports = function (config) {
   config.set({
-    // files: [
-    //   './spec.js',
-    // ],
     browsers: ['Electron'],
     basePath: '../',
     frameworks: ['jspm', 'jasmine'],

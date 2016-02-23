@@ -42,7 +42,9 @@
     "tsd": "^0.6.5",
     "typescript": "^1.7.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "glob": "^7.0.0"
+  },
   "jspm": {
     "directories": {
       "baseURL": "src/browser"

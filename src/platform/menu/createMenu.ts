@@ -11,12 +11,13 @@ export namespace SystemMenu {
   const envConf: common.Config.envConfigItem = common.Config.env[appEnv];
 
   export class Application {
-    constructor(public electron: Electron.ElectronMainAndRenderer ) {
+    constructor(public electron: Electron.ElectronMainAndRenderer) {
       var menu: Electron.Menu = electron.Menu.buildFromTemplate([
         {
           label: 'exampleApp',
           submenu: [
             { label: 'SwitchDevTool', click: this.clickDevTools.bind(this) },
+            { label: 'cngBroserMsg', click: this.cngBroserMsg.bind(this) },
             { label: 'Quit', click: this.clickQuit.bind(this) },
           ]
         },
@@ -38,9 +39,20 @@ export namespace SystemMenu {
       }
     }
 
+    cngBroserMsg(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
+      global['shaerd'] = {
+        message: 'default value'
+      };
+      interface shaerd {
+        src: string;
+        assetDir: string;
+        debug: (webContents: Electron.WebContents) => any;
+      }
+    }
+
     clickQuit(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
       _electron.app.quit();
-      
+
     }
   }
 

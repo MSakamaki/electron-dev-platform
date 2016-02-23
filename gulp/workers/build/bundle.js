@@ -5,7 +5,7 @@ const gulp = require('gulp');
 const exec = require('child_process').exec;
 const Readable = require('stream').Readable;
 
-gulp.task('jspmBundle', ()=>exec(`jspm build app ${env.dir.compile}/browser/app.js`));
+gulp.task('jspmBundle', ()=>exec(`jspm build app --minify ${env.dir.compile}/browser/app.js`));
 
 function string_src(filename, pkg) {
   var src = new Readable({ objectMode: true })

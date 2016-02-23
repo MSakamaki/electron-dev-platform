@@ -5,8 +5,9 @@ import * as common from '../config/env';
 import * as menu from '../menu/createMenu';
 
 const path = require('path');
-let appEnv: string = process.env.ENVIRONMENT || 'dist';
+const appEnv: string = process.env.ENVIRONMENT || 'dist';
 const envConf: common.Config.envConfigItem = common.Config.env[appEnv];
+
 let Electron: Electron.ElectronMainAndRenderer;
 
 
