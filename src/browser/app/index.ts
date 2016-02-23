@@ -1,5 +1,5 @@
 import './main.css!';
 
 var app:Element = document.querySelector('#app');
-app.innerHTML = 'HELLO BABEL APP !';
+app.textContent = 'HELLO BABEL APP !';
 console.log('call types');
