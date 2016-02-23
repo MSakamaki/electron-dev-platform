@@ -1,5 +1,6 @@
 ### electron my develop platfrom template
 
+[![Build Status](https://travis-ci.org/MSakamaki/electron-dev-platform.svg?branch=master)](https://travis-ci.org/MSakamaki/electron-dev-platform)
 
 ### task
 

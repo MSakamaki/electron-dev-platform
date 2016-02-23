@@ -1,3 +1,3 @@
 const gulp = require('gulp');
 
-gulp.task('default', ()=> console.log('not default task'));
+gulp.task('default', ['help']);

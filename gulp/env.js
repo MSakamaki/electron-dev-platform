@@ -1,40 +1,17 @@
 import APP_CONF from './config/electron.build';
+import JASMINE_CONF from './config/jasmine';
+import PATH from './config/rootPaths';
+import SOURCE from './config/srouces';
 
 const extension = {
   'darwin': 'app',
   'win32': 'exe',
 }
 
-const path = {
-  root: process.cwd(),
-  browser: 'src/browser',
-  assets: 'src/assets',
-  platform: 'src/platform',
-  gulp: 'gulp',
-  dest: 'dest',
-  dist: 'dist',
-  compile: 'dest/compile',
-  pack: 'dest/pack',
-};
-
-const src = {
-  platform:{
-    src:[`${path.platform}/**/!(*spec).ts`],
-    test:[`${path.platform}/**/?(*spec).ts`],
-    asset:[`${path.assets}/common/**/*`]
-  },
-  browser:{
-    script:[`${path.browser}/**/!(*spec).ts`],
-    html:[
-      `${path.browser}/**/*.html`,
-      `!${path.browser}/jspm_packages/**/*.html`,
-    ],
-  },
-};
-
 const env = {
-  dir: path,
-  src: src,
+  jasmine:JASMINE_CONF,
+  dir: PATH,
+  src: SOURCE,
   electron: {
     appName: 'exampleApp',
     version: '0.36.7',

@@ -1,21 +1,24 @@
 /// <reference path="../../../typings/github-electron/github-electron.d.ts" />
 /// <reference path="../../../typings/node/node.d.ts" />
 /// <reference path="../config/env.d.ts" />
-/// <reference path="../config/env.ts" />
 
-module SystemMenu {
+import * as common from '../config/env';
 
+let _electron: Electron.ElectronMainAndRenderer;
+
+export namespace SystemMenu {
   let appEnv: string = process.env.ENVIRONMENT || 'dist';
-  const envConf: Config.envConfigItem = Config.env[appEnv];
+  const envConf: common.Config.envConfigItem = common.Config.env[appEnv];
 
   export class Application {
-    constructor(private electron: Electron.ElectronMainAndRenderer) {
+    constructor(public electron: Electron.ElectronMainAndRenderer) {
       var menu: Electron.Menu = electron.Menu.buildFromTemplate([
         {
           label: 'exampleApp',
           submenu: [
-            { label: 'SwitchDevTool', click: this.clickDevTools },
-            { label: 'Quit', click: this.clickQuit },
+            { label: 'SwitchDevTool', click: this.clickDevTools.bind(this) },
+            { label: 'cngBroserMsg', click: this.cngBroserMsg.bind(this) },
+            { label: 'Quit', click: this.clickQuit.bind(this) },
           ]
         },
         {
@@ -27,6 +30,7 @@ module SystemMenu {
         },
       ]);
       electron.Menu.setApplicationMenu(menu);
+      _electron = electron;
     }
 
     clickDevTools(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
@@ -35,8 +39,20 @@ module SystemMenu {
       }
     }
 
+    cngBroserMsg(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
+      global['shaerd'] = {
+        message: 'default value'
+      };
+      interface shaerd {
+        src: string;
+        assetDir: string;
+        debug: (webContents: Electron.WebContents) => any;
+      }
+    }
+
     clickQuit(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
-      electron.app.quit();
+      _electron.app.quit();
+
     }
   }
 
@@ -45,7 +61,8 @@ module SystemMenu {
    */
   export class Context {
     constructor(private electron: Electron.ElectronMainAndRenderer) {
-      var appIcon: Electron.Tray = new electron.Tray(`${__dirname}/assets/icon.png`);
+      //var appIcon: Electron.Tray = new electron.Tray(`${__dirname}/assets/icon.png`);
+      var appIcon: Electron.Tray = new electron.Tray(`/Users/msakamaki/project/electron/electron-platform/dest/compile/assets/icon.png`);
       var contextMenu: any = electron.Menu.buildFromTemplate([
         { label: 'context 1', type: 'radio' },
         { label: 'context 2', type: 'radio' },

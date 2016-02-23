@@ -1,14 +1,12 @@
 exports.config = {
   directConnect: true,
-  seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['/Users/msakamaki/project/electron/electron-platform/protractor/spec/spec.js'],
+  specs: [`${process.cwd()}/protractor/spec/spec.js`],
   capabilities: {
     browserName: "chrome",
     chromeOptions: {
-      binary: '/Users/msakamaki/project/electron/electron-platform/dest/pack/exampleApp-darwin-x64/exampleApp.app/Contents/MacOS/Electron'
+      // https://github.com/atom/electron/blob/master/docs/tutorial/using-selenium-and-webdriver.md
+      // mac osx
+      binary: `${process.cwd()}/dest/pack/exampleApp-darwin-x64/exampleApp.app/Contents/MacOS/Electron`,
     },  
-  },
-//   onPrepare: function () {
-//     browser.resetUrl = "file://";
-//   }
+  }
 };
