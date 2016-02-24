@@ -1,6 +1,8 @@
 /// <reference path="../../typings/tsd.d.ts"/>
 
-const ROOT_PATH = {
+import {RootPathInf} from './_interfacees';
+
+const ROOT_PATH: RootPathInf = {
   root: process.cwd(),
   browser: 'src/browser',
   assets: 'src/assets',

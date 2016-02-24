@@ -1,8 +1,9 @@
 /// <reference path="../../typings/tsd.d.ts"/>
 
 import path from './rootPaths';
+import {SourcePathsInf} from './_interfacees';
 
-const SOURCE = {
+const SOURCE: SourcePathsInf = {
   platform: {
     src: [
       `${path.platform}/**/!(*spec).ts`

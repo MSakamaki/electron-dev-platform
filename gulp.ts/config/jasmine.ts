@@ -1,6 +1,8 @@
 /// <reference path="../../typings/tsd.d.ts"/>
 
-const JASMINE_CONF = {
+import {JasmineConfInf} from './_interfacees';
+
+const JASMINE_CONF: JasmineConfInf = {
   spec_dir: 'dest/unit',
   spec_files: [
     'config/**/*.spec.js'
