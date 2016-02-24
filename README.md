@@ -56,6 +56,10 @@ gulp build:win32
 
 ## I want to use
 
+### document
+
+[documentation-translations](https://github.com/atom/electron#documentation-translations)
+
 ### mozule management
 
  + [Useful resources for creating apps with Electron](https://github.com/sindresorhus/awesome-electron)

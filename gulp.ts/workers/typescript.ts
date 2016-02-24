@@ -10,14 +10,13 @@ const concat = require('gulp-concat');
 
 const platConfig = require('../../src/platform/tsconfig.json');
 
-gulp.task('ts', function () {
+gulp.task('ts', ()=> {
   return gulp.src(env.src.platform.src)
   .pipe(ts(platConfig.compilerOptions))
   .pipe(gulp.dest(env.dir.compile));
 });
 
-
-gulp.task('ts:unit', function () {
+gulp.task('ts:unit', ()=> {
   return gulp.src(env.src.platform.test)
   .pipe(ts({
         "module": "commonjs",
@@ -29,4 +28,20 @@ gulp.task('ts:unit', function () {
         "removeComments": true
     }))
   .pipe(gulp.dest('dest/unit'));
+});
+
+gulp.task('ts:e2e', ()=> {
+  return gulp.src([
+    'protractor/**/*.ts'
+  ])
+  .pipe(ts({
+        "module": "commonjs",
+        'moduleResolution': 'node',
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "typeCheck": true,
+        "tsconfig": true,
+        "removeComments": true
+    }))
+  .pipe(gulp.dest('dest/e2e'));
 });

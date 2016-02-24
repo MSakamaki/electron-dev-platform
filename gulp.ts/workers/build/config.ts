@@ -5,6 +5,7 @@ import env from '../../env';
 const renamedBuilderPlatform = {
   darwin: 'osx',
   win32: 'win',
+  linux: 'linux',
 };
 
 export default class ConfigGenerator {

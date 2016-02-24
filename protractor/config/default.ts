@@ -1,6 +1,7 @@
+/// <reference path="../../typings/tsd.d.ts" />
+
 exports.config = {
   directConnect: true,
-  specs: [`${process.cwd()}/protractor/spec/spec.js`],
   capabilities: {
     browserName: "chrome",
     chromeOptions: {

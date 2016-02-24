@@ -1,23 +1,15 @@
 /// <reference path="../../typings/tsd.d.ts"/>
 
-(() => {
-  const gulp = require('gulp');
-  const protractor = require('gulp-protractor').protractor;
+// ENVIRONMENT=dist electron dest/platform/index.js
+// script src <script src="./app.js"></script> only
+import env from '../env';
 
-  // jscs:disable
-  const webdriverUpdate = require('gulp-protractor').webdriver_update;
+const gulp = require('gulp');
+const runSequence = require('run-sequence');
 
-  // jscs:enable
-
-  gulp.task('webdriverUpdate', webdriverUpdate);
-
-  gulp.task('e2e', ['webdriverUpdate'], () => {
-
-    return gulp.src(['./protractor/spec/*.js'])
-      .pipe(protractor({
-        configFile: './protractor/config/default.js',
-      }))
-      .on('error', function(e) { throw e; });
-  });
-
-})();
+gulp.task('e2e:osx', cb=>
+  runSequence(
+    ['build:compile','ts:e2e'],
+    'pack:osx',
+    'protractor',
+    cb));
