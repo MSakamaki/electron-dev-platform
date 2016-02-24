@@ -29,6 +29,7 @@
     "gulp-protractor": "^2.1.0",
     "gulp-replace": "^0.5.4",
     "gulp-typescript": "^2.11.0",
+    "gulp-useref": "^3.0.7",
     "gulp-util": "^3.0.7",
     "istanbul": "^0.4.2",
     "jasmine": "^2.4.1",
