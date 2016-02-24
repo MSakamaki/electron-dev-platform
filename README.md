@@ -44,6 +44,7 @@ gulp build:win32
 
 ### Required for Windows environment build (windows os Recommended)
 
+ - c++ 2010 再頒布可能パッケージ
  + [NSIS: Nullsoft Scriptable Install System](https://sourceforge.net/projects/nsis/)
 
 #### Non-windows platforms
