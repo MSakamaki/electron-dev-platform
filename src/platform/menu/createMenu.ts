@@ -5,6 +5,7 @@
 import * as common from '../config/env';
 
 let _electron: Electron.ElectronMainAndRenderer;
+const path = require('path');
 
 export namespace SystemMenu {
   let appEnv: string = process.env.ENVIRONMENT || 'dist';
@@ -62,7 +63,8 @@ export namespace SystemMenu {
   export class Context {
     constructor(private electron: Electron.ElectronMainAndRenderer) {
       //var appIcon: Electron.Tray = new electron.Tray(`${__dirname}/assets/icon.png`);
-      var appIcon: Electron.Tray = new electron.Tray(`/Users/msakamaki/project/electron/electron-platform/dest/compile/assets/icon.png`);
+      //var appIcon: Electron.Tray = new electron.Tray(`/Users/msakamaki/project/electron/electron-platform/dest/compile/assets/icon.png`);
+      var appIcon: Electron.Tray = new electron.Tray(path.join(__dirname, '..', 'assets','icon.png'));
       var contextMenu: any = electron.Menu.buildFromTemplate([
         { label: 'context 1', type: 'radio' },
         { label: 'context 2', type: 'radio' },
