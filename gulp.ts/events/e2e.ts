@@ -11,5 +11,12 @@ gulp.task('e2e:osx', cb=>
   runSequence(
     ['build:compile','ts:e2e'],
     'pack:osx',
-    'protractor',
+    'protractor:osx',
+    cb));
+
+gulp.task('e2e:linux', cb=>
+  runSequence(
+    ['build:compile','ts:e2e'],
+    'pack:linux',
+    'protractor:linux',
     cb));

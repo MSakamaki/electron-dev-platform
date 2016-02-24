@@ -7,11 +7,19 @@
 
   gulp.task('webdriverUpdate', webdriverUpdate);
 
-  gulp.task('protractor', ['webdriverUpdate'], () => {
+  gulp.task('protractor:osx', ['webdriverUpdate'], () => {
 
     return gulp.src(['./dest/e2e/spec/**/*.js'])
       .pipe(protractor({
         configFile: './dest/e2e/config/default.js',
+      }))
+      .on('error', (e) => { throw e });
+  });
+  gulp.task('protractor:linux', ['webdriverUpdate'], () => {
+
+    return gulp.src(['./dest/e2e/spec/**/*.js'])
+      .pipe(protractor({
+        configFile: './dest/e2e/config/linux.js',
       }))
       .on('error', (e) => { throw e });
   });
