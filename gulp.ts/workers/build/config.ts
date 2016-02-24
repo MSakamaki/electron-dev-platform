@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/tsd.d.ts"/>
+
 import env from '../../env';
 
 const renamedBuilderPlatform = {
@@ -6,7 +8,9 @@ const renamedBuilderPlatform = {
 };
 
 export default class ConfigGenerator {
-  constructor(arch, platform) {
+  public arch : string;
+  public platform : string;
+  constructor(arch: string, platform: string) {
     this.arch = arch;
     this.platform = platform;
   }

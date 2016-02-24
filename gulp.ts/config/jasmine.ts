@@ -1,3 +1,4 @@
+/// <reference path="../../typings/tsd.d.ts"/>
 
 const JASMINE_CONF = {
   spec_dir: 'dest/unit',

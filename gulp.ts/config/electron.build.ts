@@ -1,3 +1,5 @@
+/// <reference path="../../typings/tsd.d.ts"/>
+
 const APPLICATION_TITILE = 'Electron Builder Example';
 
 const ELECTRON_CONF = {

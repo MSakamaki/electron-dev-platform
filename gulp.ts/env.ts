@@ -1,3 +1,5 @@
+/// <reference path="../typings/tsd.d.ts"/>
+
 import APP_CONF from './config/electron.build';
 import JASMINE_CONF from './config/jasmine';
 import PATH from './config/rootPaths';

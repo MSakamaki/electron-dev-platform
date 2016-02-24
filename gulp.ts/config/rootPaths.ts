@@ -1,3 +1,5 @@
+/// <reference path="../../typings/tsd.d.ts"/>
+
 const ROOT_PATH = {
   root: process.cwd(),
   browser: 'src/browser',

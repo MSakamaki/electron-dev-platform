@@ -1,3 +1,4 @@
+/// <reference path="../../typings/tsd.d.ts"/>
 
 // ENVIRONMENT=dist electron dest/platform/index.js
 // script src <script src="./app.js"></script> only
