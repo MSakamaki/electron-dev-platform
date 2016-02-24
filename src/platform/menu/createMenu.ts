@@ -40,7 +40,7 @@ export namespace SystemMenu {
     }
 
     cngBroserMsg(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
-      global['shaerd'] = {
+      (<any>global).shaerd = {
         message: 'default value'
       };
       interface shaerd {
