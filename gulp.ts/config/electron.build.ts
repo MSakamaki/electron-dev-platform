@@ -1,6 +1,10 @@
+/// <reference path="../../typings/tsd.d.ts"/>
+
+import {ElectronConfInf} from './_interfacees';
+
 const APPLICATION_TITILE = 'Electron Builder Example';
 
-const ELECTRON_CONF = {
+const ELECTRON_CONF: ElectronConfInf = {
   osx: {
     title: APPLICATION_TITILE,
     background: 'src/assets/osx/installer.png',
@@ -18,3 +22,4 @@ const ELECTRON_CONF = {
 };
 
 export default ELECTRON_CONF;
+

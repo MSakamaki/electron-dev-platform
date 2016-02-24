@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/tsd.d.ts"/>
+
 import env from '../../env';
 import Config from './config';
 
