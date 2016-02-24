@@ -1,6 +1,8 @@
 ### electron my develop platfrom template
 
-[![Build Status](https://travis-ci.org/MSakamaki/electron-dev-platform.svg?branch=master)](https://travis-ci.org/MSakamaki/electron-dev-platform)
+
+|[![Build Status](https://travis-ci.org/MSakamaki/electron-dev-platform.svg?branch=master)](https://travis-ci.org/MSakamaki/electron-dev-platform)|[![Dependency Status](https://gemnasium.com/MSakamaki/electron-dev-platform.svg)](https://gemnasium.com/MSakamaki/electron-dev-platform)|
+|:-:|:-:|
 
 ### task
 
