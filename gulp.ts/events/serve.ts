@@ -10,9 +10,12 @@ import env from '../env';
 
   gulp.task('serve', cb=>
     runSequence(
-      'clean:compile',
+      ['clean:compile', 'clean:build'],
       ['ts', 'copy:assets'],
       'watch',
+      // update checker
+      'build:compile',
+      ['pack:osx', 'mock:server'],
       'exec:electron',
       cb));
 
