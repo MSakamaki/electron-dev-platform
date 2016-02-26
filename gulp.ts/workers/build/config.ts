@@ -2,7 +2,7 @@
 
 import env from '../../env';
 import {ElectronConfInf} from '../../config/_interfacees';
-
+import ELECTRON_DEFAULT_CONF from '../../config/electron.config';
 
 const renamedBuilderPlatform = {
   darwin: 'osx',
@@ -25,9 +25,10 @@ export default class ConfigGenerator {
       out: env.dir.pack,
       name: env.electron.appName,
       arch: this.arch,
+      icon: ELECTRON_DEFAULT_CONF[process.platform].icon,
       platform: this.platform,
       version: env.electron.version,
-      //sign: 'Developer ID Application: Nulab Inc. (XXXXXXXXXX)',
+      //sign: 'Developer ID Application: DUMMY Inc. (XXXX)',
     }
   }
   builder(): builderFmt {
@@ -55,6 +56,7 @@ interface packagerFmt {
       arch: string;
       platform: string;
       version: string;
+      icon: string;
       //sign: string;
 }
 

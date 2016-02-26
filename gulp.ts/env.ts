@@ -23,7 +23,7 @@ const env = {
   electron: {
     appName: 'exampleApp',
     version: '0.36.8',
-    buildName: (platform, arch) => {
+    buildName: (platform, arch): string => {
       let ElectronPlatformPath = {
         win32:`${env.electron.appName}-${platform}-${arch}/`,
         darwin: `${env.electron.appName}-${platform}-${arch}/${env.electron.appName}.${extension[platform]}`,

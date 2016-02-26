@@ -46,10 +46,8 @@ gulp build:win32
 ### Required for Windows environment build (windows os Recommended)
 
  - c++ 2010 再頒布可能パッケージ
- + [NSIS: Nullsoft Scriptable Install System](https://sourceforge.net/projects/nsis/)
 
-
-### (windows) create my code signing
+### (windows) create dummy code signing
 
 ```sh
 # preparation
@@ -79,6 +77,14 @@ openssl pkcs12 -export -in my.crt -inkey seq.key -out my.pfx
  + C compiler (gcc and g++ packages)
  + [scons](http://www.scons.org/)
    + `python setup.py install`
+
+### [mac osx] Image2icon
+
+ + [Image2icon](http://www.img2icnsapp.com/)
+
+### icon maker
+
+ + [iconifier](http://iconifier.net/)
 
 ## I want to use
 
