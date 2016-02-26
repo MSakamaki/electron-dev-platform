@@ -3,8 +3,6 @@
 /// <reference path="../config/env.d.ts" />
 
 import * as common from '../config/env';
-
-let _electron: Electron.ElectronMainAndRenderer;
 const path = require('path');
 
 export namespace SystemMenu {
@@ -19,6 +17,7 @@ export namespace SystemMenu {
           submenu: [
             { label: 'SwitchDevTool', click: this.clickDevTools.bind(this) },
             { label: 'cngBroserMsg', click: this.cngBroserMsg.bind(this) },
+            { label: 'checkUpdate', click: this.checkUpdate.bind(this) },
             { label: 'Quit', click: this.clickQuit.bind(this) },
           ]
         },
@@ -31,7 +30,7 @@ export namespace SystemMenu {
         },
       ]);
       electron.Menu.setApplicationMenu(menu);
-      _electron = electron;
+      //this.electron = electron;
     }
 
     clickDevTools(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
@@ -51,9 +50,36 @@ export namespace SystemMenu {
       }
     }
 
-    clickQuit(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
-      _electron.app.quit();
+    checkUpdate(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
+      const {autoUpdater, dialog} = require("electron");
+      autoUpdater.setFeedURL(`http://localhost:8080/api/update/${process.platform}`);
+      autoUpdater.checkForUpdates();
+      autoUpdater.on("update-downloaded", () => {
+        let index = dialog.showMessageBox({
+          message: "There are updates",
+          detail: "install and reboot.",
+          buttons: ["reboot", "For later"]
+        });
+        if (index === 0) {
+          autoUpdater.quitAndInstall();
+        }
+      });
+      autoUpdater.on("update-not-available", () => {
+        dialog.showMessageBox({
+          message: "There are no updates",
+          buttons: ["OK"]
+        });
+      });
+      autoUpdater.on("error", () => {
+        dialog.showMessageBox({
+          message: "update error has occurred",
+          buttons: ["OK"]
+        });
+      });
+    }
 
+    clickQuit(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
+      this.electron.app.quit();
     }
   }
 
@@ -62,9 +88,7 @@ export namespace SystemMenu {
    */
   export class Context {
     constructor(private electron: Electron.ElectronMainAndRenderer) {
-      //var appIcon: Electron.Tray = new electron.Tray(`${__dirname}/assets/icon.png`);
-      //var appIcon: Electron.Tray = new electron.Tray(`/Users/msakamaki/project/electron/electron-platform/dest/compile/assets/icon.png`);
-      var appIcon: Electron.Tray = new electron.Tray(path.join(__dirname, '..', 'assets','icon.png'));
+      var appIcon: Electron.Tray = new electron.Tray(path.join(__dirname, '..', 'assets', 'icon.png'));
       var contextMenu: any = electron.Menu.buildFromTemplate([
         { label: 'context 1', type: 'radio' },
         { label: 'context 2', type: 'radio' },

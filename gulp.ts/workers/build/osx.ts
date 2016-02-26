@@ -9,6 +9,4 @@ const builder = require('electron-builder').init();
 
 const configer = new Config('x64','darwin');
 gulp.task('pack:osx', done => packager(configer.packager(), done));
-gulp.task('installer:osx', done => packager(configer.packager(), () => builder.build(configer.builder(), done)));
-
-
+gulp.task('installer:osx', done => builder.build(configer.builder(), done));

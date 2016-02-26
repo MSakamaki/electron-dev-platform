@@ -1,23 +1,18 @@
 /// <reference path="../../typings/tsd.d.ts"/>
 
 import {ElectronConfInf} from './_interfacees';
-
-const APPLICATION_TITILE = 'Electron Builder Example';
+import ELECTRON_DEFAULT_CONF from './electron.config';
 
 const ELECTRON_CONF: ElectronConfInf = {
   osx: {
-    title: APPLICATION_TITILE,
+    title: 'Electron Builder Example',
     background: 'src/assets/osx/installer.png',
-    icon: 'src/assets/osx/mount.icns',
+    icon: ELECTRON_DEFAULT_CONF.darwin.icon,
     'icon-size': 80,
     contents: [
       { x: 210, y: 100, type: 'link', path: '/Applications' },
       { x: 80, y: 100, type: 'file' },
     ],
-  },
-  win: {
-    title: APPLICATION_TITILE,
-    icon: 'src/assets/win/icon.ico',
   },
 };
 

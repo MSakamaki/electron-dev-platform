@@ -16,5 +16,5 @@ gulp.task('clean:build', done=> del([
 
 gulp.task('clean:unit', done=> del([
     `${env.dir.pack}/*`,
-    `dest/unit/*`,
+    `${env.dir.unit}/*`,
   ], done));

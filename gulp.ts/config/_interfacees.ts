@@ -13,10 +13,6 @@ export interface ElectronConfInf {
     'icon-size': number,
     contents: Array<any>,
   },
-  win: {
-    title: string,
-    icon: string,
-  },
 }
 
 export interface RootPathInf {
@@ -29,6 +25,7 @@ export interface RootPathInf {
   dist: string,
   compile: string,
   pack: string,
+  unit: string,
 };
 
 export interface SourcePathsInf {
@@ -42,3 +39,13 @@ export interface SourcePathsInf {
     html:  Array<string>,
   },
 };
+
+export interface electronDefaultConf {
+  darwin: electronConfItemInf;
+  win32: electronConfItemInf;
+  linux: electronConfItemInf;
+}
+
+export interface electronConfItemInf {
+  icon: string;
+}
