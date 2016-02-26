@@ -13,10 +13,8 @@ import env from '../env';
       'clean:compile',
       ['ts', 'copy:assets'],
       'watch',
-      'mock:server',
       'exec:electron',
       cb));
-
 
   gulp.task('updatemock:win32', cb=>
     runSequence(
@@ -25,7 +23,11 @@ import env from '../env';
       'mock:server',
       cb));
 
-  gulp.task('exec:electron', () => exec('ENVIRONMENT=dev electron dest/compile/index.js'));
-
-
+    gulp.task('exec:electron', () => {
+        if (process.platform !== 'win32'){
+            exec('ENVIRONMENT=dev electron dest/compile/index.js')
+        }else{
+            exec(`set ENVIRONMENT=dev&& electron dest/compile/index.js`)
+        }
+    });
 })();

@@ -3,8 +3,6 @@
 /// <reference path="../config/env.d.ts" />
 
 import * as common from '../config/env';
-
-let _electron: Electron.ElectronMainAndRenderer;
 const path = require('path');
 
 export namespace SystemMenu {
@@ -32,7 +30,7 @@ export namespace SystemMenu {
         },
       ]);
       electron.Menu.setApplicationMenu(menu);
-      _electron = electron;
+      //this.electron = electron;
     }
 
     clickDevTools(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
@@ -58,9 +56,9 @@ export namespace SystemMenu {
       autoUpdater.checkForUpdates();
       autoUpdater.on("update-downloaded", () => {
         let index = dialog.showMessageBox({
-          message: "アップデートあり",
-          detail: "再起動してインストールできます。",
-          buttons: ["再起動", "後で"]
+          message: "There are updates",
+          detail: "install and reboot.",
+          buttons: ["reboot", "For later"]
         });
         if (index === 0) {
           autoUpdater.quitAndInstall();
@@ -68,21 +66,20 @@ export namespace SystemMenu {
       });
       autoUpdater.on("update-not-available", () => {
         dialog.showMessageBox({
-          message: "アップデートはありません",
+          message: "There are no updates",
           buttons: ["OK"]
         });
       });
       autoUpdater.on("error", () => {
         dialog.showMessageBox({
-          message: "アップデートエラーが起きました",
+          message: "update error has occurred",
           buttons: ["OK"]
         });
       });
-      //autoUpdater.quitAndInstall();
     }
 
     clickQuit(item: Electron.MenuItem, focusedWindow: Electron.WebContents) {
-      _electron.app.quit();
+      this.electron.app.quit();
     }
   }
 
@@ -91,8 +88,6 @@ export namespace SystemMenu {
    */
   export class Context {
     constructor(private electron: Electron.ElectronMainAndRenderer) {
-      //var appIcon: Electron.Tray = new electron.Tray(`${__dirname}/assets/icon.png`);
-      //var appIcon: Electron.Tray = new electron.Tray(`/Users/msakamaki/project/electron/electron-platform/dest/compile/assets/icon.png`);
       var appIcon: Electron.Tray = new electron.Tray(path.join(__dirname, '..', 'assets', 'icon.png'));
       var contextMenu: any = electron.Menu.buildFromTemplate([
         { label: 'context 1', type: 'radio' },

@@ -9,7 +9,7 @@
 
 ```sh
 # global module
-npm -g install gulp jspm tsd karma
+npm -g install gulp jspm tsd karma electron-prebuilt
 
 # install
 npm install

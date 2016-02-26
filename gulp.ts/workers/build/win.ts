@@ -31,6 +31,8 @@ grunt.initConfig({
       outputDirectory: 'dist/installer32',
       authors: 'exampleApp',
       exe: 'exampleApp.exe',
+    //   certificateFile:'[my.pfx]',
+    //   certificatePassword:'[password]'
     }
   }
 });

@@ -18,9 +18,9 @@ export namespace Application {
   private appUrl: string;
 
   constructor(public electron: Electron.ElectronMainAndRenderer) {
-    this.electron.app.on('window-all-closed', this.windowAllClosed);
-    this.electron.app.on('ready', this.ready);
-    this.electron.app.on('activate', this.activate);
+    this.electron.app.on('window-all-closed', this.windowAllClosed.bind(this));
+    this.electron.app.on('ready', this.ready.bind(this));
+    this.electron.app.on('activate', this.activate.bind(this));
     Electron = electron;
   }
 
@@ -44,7 +44,7 @@ export namespace Application {
 
   windowAllClosed() {
     if (process.platform !== 'darwin') {
-      this.electron.app.quit();
+      Electron.app.quit();
     }
   }
 

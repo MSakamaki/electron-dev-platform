@@ -5,12 +5,18 @@ import JASMINE_CONF from './config/jasmine';
 import PATH from './config/rootPaths';
 import SOURCE from './config/srouces';
 
+const packageJson = require('../package.json');
+
 const extension = {
   'darwin': 'app',
   'win32': 'exe',
 }
 
 const env = {
+  app:{
+      version: packageJson.version,
+      name: packageJson.name,
+  },
   jasmine:JASMINE_CONF,
   dir: PATH,
   src: SOURCE,

@@ -28,7 +28,6 @@ export default class ConfigGenerator {
       platform: this.platform,
       version: env.electron.version,
       //sign: 'Developer ID Application: Nulab Inc. (XXXXXXXXXX)',
-      sign_with_params: '/a /f [my.pfx] /p [password]',
     }
   }
   builder(): builderFmt {
@@ -57,7 +56,6 @@ interface packagerFmt {
       platform: string;
       version: string;
       //sign: string;
-      sign_with_params: string;
 }
 
 interface builderFmt {
