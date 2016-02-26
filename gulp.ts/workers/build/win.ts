@@ -10,7 +10,7 @@ const grunt = require('grunt');
 
 const confWin64 = new Config('x64','win32');
 gulp.task('pack:win', done => packager(confWin64.packager(), done));
-gulp.task('installer:win', done =>  grunt.tasks(['create-windows-installer:x64'], {}, done));
+gulp.task('installer:win',   done => grunt.tasks(['create-windows-installer:x64'], {}, done));
 
 const confWin32 = new Config('ia32','win32');
 gulp.task('pack:win32', done => packager(confWin32.packager(), done));

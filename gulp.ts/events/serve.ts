@@ -10,13 +10,19 @@ import env from '../env';
 
   gulp.task('serve', cb=>
     runSequence(
-      ['clean:compile', 'clean:build'],
+      'clean:compile',
       ['ts', 'copy:assets'],
       'watch',
-      // update checker
-      'build:compile',
-      ['pack:osx', 'mock:server'],
+      'mock:server',
       'exec:electron',
+      cb));
+
+
+  gulp.task('updatemock:win32', cb=>
+    runSequence(
+      'build:compile',
+      'pack:win32',
+      'mock:server',
       cb));
 
   gulp.task('exec:electron', () => exec('ENVIRONMENT=dev electron dest/compile/index.js'));
