@@ -8,9 +8,6 @@ const path = require('path');
 const appEnv: string = process.env.ENVIRONMENT || 'dist';
 const envConf: common.Config.envConfigItem = common.Config.env[appEnv];
 
-let Electron: Electron.ElectronMainAndRenderer;
-
-
 export namespace Application {
   export class Main {
 
@@ -21,11 +18,10 @@ export namespace Application {
     this.electron.app.on('window-all-closed', this.windowAllClosed.bind(this));
     this.electron.app.on('ready', this.ready.bind(this));
     this.electron.app.on('activate', this.activate.bind(this));
-    Electron = electron;
   }
 
   ready() {
-    this.mainWindow = new Electron.BrowserWindow({ width: 800, height: 600 });
+    this.mainWindow = new this.electron.BrowserWindow({ width: 800, height: 600 });
 
     this.appUrl = `file://${path.join(__dirname, envConf.src, 'browser/index.html')}`;
 
@@ -34,8 +30,8 @@ export namespace Application {
     envConf.debug(this.mainWindow.webContents);
 
     // create menu
-    const menuApp = new menu.SystemMenu.Application(Electron);
-    const menuContext = new menu.SystemMenu.Context(Electron);
+    const menuApp = new menu.SystemMenu.Application(this.electron);
+    const menuContext = new menu.SystemMenu.Context(this.electron);
 
     this.mainWindow.on('closed', function() {
       this.mainWindow = null;
@@ -44,7 +40,7 @@ export namespace Application {
 
   windowAllClosed() {
     if (process.platform !== 'darwin') {
-      Electron.app.quit();
+      this.electron.app.quit();
     }
   }
 

@@ -12,6 +12,7 @@ const ROOT_PATH: RootPathInf = {
   dist: 'dist',
   compile: 'dest/compile',
   pack: 'dest/pack',
+  unit: 'dest/unit',
 };
 
 export default ROOT_PATH;

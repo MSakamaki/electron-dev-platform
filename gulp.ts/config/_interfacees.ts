@@ -29,6 +29,7 @@ export interface RootPathInf {
   dist: string,
   compile: string,
   pack: string,
+  unit: string,
 };
 
 export interface SourcePathsInf {
