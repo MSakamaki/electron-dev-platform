@@ -23,6 +23,7 @@ import env from '../env';
       'mock:server',
       cb));
 
+    // todo: https://github.com/electron-userland/electron-prebuilt#programmatic-usage
     gulp.task('exec:electron', () => {
         if (process.platform !== 'win32'){
             exec('ENVIRONMENT=dev electron dest/compile/index.js')

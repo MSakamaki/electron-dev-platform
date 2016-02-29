@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/tsd.d.ts" />
 /// <reference path="../po/main.po.d.ts" />
 
 import {Main} from '../po/main.po';
@@ -12,7 +12,7 @@ describe('angularjs homepage todo list', function() {
 
     browser.wait(()=>main.elmHello.isPresent(), 10000, 'not app id')
       .then(()=>{
-          expect(main.elmHello.getInnerHtml()).toBe('HELLO -- non message -- APP !');
+          expect(main.elmHello.getInnerHtml()).toBe('SAMPLE CODE');
       })
       .then(done);
   });

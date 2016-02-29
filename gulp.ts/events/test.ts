@@ -11,4 +11,5 @@ gulp.task('test', cb=>
     'clean:unit',
     'ts:unit',
     'jasmine:platform',
+    'karma:browser',
     cb));
