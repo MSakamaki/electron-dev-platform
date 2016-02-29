@@ -40,7 +40,7 @@
     "karma-electron-launcher": "^0.1.0",
     "karma-electronrequire-preprocessor": "0.0.1",
     "karma-jasmine": "^0.3.7",
-    "karma-jspm": "git@github.com:rafiwardak2003/karma-jspm.git",
+    "karma-jspm": "rafiwardak2003/karma-jspm",
     "karma-typescript-preprocessor": "0.0.21",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
