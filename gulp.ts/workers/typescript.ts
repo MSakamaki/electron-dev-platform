@@ -32,7 +32,7 @@ gulp.task('ts:unit', ()=> {
 
 gulp.task('ts:e2e', ()=> {
   return gulp.src([
-    'protractor/**/*.ts'
+    'test/e2e/**/*.ts'
   ])
   .pipe(ts({
         "module": "commonjs",
