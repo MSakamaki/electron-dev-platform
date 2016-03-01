@@ -28,7 +28,7 @@ export default class ConfigGenerator {
       icon: ELECTRON_DEFAULT_CONF[process.platform].icon,
       platform: this.platform,
       version: env.electron.version,
-      //sign: 'Developer ID Application: DUMMY Inc. (XXXX)',
+      sign: env.app.sign.APPLE_APPLICATION_ID || '' ,
     }
   }
   builder(): builderFmt {
@@ -57,7 +57,7 @@ interface packagerFmt {
       platform: string;
       version: string;
       icon: string;
-      //sign: string;
+      sign: string;
 }
 
 interface builderFmt {

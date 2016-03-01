@@ -4,6 +4,14 @@ import APP_CONF from './config/electron.build';
 import JASMINE_CONF from './config/jasmine';
 import PATH from './config/rootPaths';
 import SOURCE from './config/srouces';
+const sign = (()=>{
+  try{
+    return require('../sign.json');;
+  }catch(e){
+    console.warn('sign.json not found !');
+    return {};
+  }
+})();
 
 const packageJson = require('../package.json');
 
@@ -16,6 +24,7 @@ const env = {
   app:{
       version: packageJson.version,
       name: packageJson.name,
+      sign: sign,
   },
   jasmine:JASMINE_CONF,
   dir: PATH,

@@ -16,13 +16,19 @@ import env from '../env';
       'exec:electron',
       cb));
 
-  gulp.task('updatemock:win32', cb=>
+  gulp.task('mock:win32', cb=>
     runSequence(
       'build:compile',
       'pack:win32',
       'mock:server',
       cb));
 
+  gulp.task('mock:osx', cb=>
+    runSequence(
+      'build:compile',
+      'pack:osx',
+      'mock:server',
+      cb));
     // todo: https://github.com/electron-userland/electron-prebuilt#programmatic-usage
     gulp.task('exec:electron', () => {
         if (process.platform !== 'win32'){

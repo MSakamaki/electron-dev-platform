@@ -5,3 +5,4 @@ dist/*
 typings/
 .DS_Store
 npm-debug.log
+sign.json
