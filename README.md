@@ -43,6 +43,12 @@ gulp build:win32
 
 ```
 
+### apple ID Application setting
+
+rename the file `sign.sample.json` to `sign.json`
+
+It specifies the Apple ID to `APPLE_APPLICATION_ID`
+
 ### Required for Windows environment build (windows os Recommended)
 
  - c++ 2010 再頒布可能パッケージ
