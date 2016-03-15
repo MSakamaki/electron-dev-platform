@@ -1,5 +1,7 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
+const packageJson = require('../../../package.json');
+
 exports.config = {
   directConnect: true,
   capabilities: {
@@ -7,7 +9,7 @@ exports.config = {
     chromeOptions: {
       // https://github.com/atom/electron/blob/master/docs/tutorial/using-selenium-and-webdriver.md
       // mac osx
-      binary: `${process.cwd()}/dest/pack/exampleApp-darwin-x64/exampleApp.app/Contents/MacOS/Electron`,
+      binary: `${process.cwd()}/dest/pack/${packageJson.name}-darwin-x64/${packageJson.name}.app/Contents/MacOS/Electron`,
     },  
   }
 };

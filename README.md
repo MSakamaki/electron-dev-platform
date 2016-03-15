@@ -5,6 +5,11 @@
 
 ### task
 
+### electon app config
+
+ + application name `package.json` is `"name"`
+ + version version `package.json` is `"version"`
+
 #### install
 
 ```sh
