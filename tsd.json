@@ -6,28 +6,28 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "github-electron/github-electron.d.ts": {
-      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+      "commit": "81ebfb3d08cd608a7c801668a6d5f7b2ea9ecc38"
     },
     "node/node.d.ts": {
-      "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+      "commit": "81ebfb3d08cd608a7c801668a6d5f7b2ea9ecc38"
     },
     "jasmine/jasmine.d.ts": {
-      "commit": "7af83a5376afd5a9d7088a38a85cfe3653cbf3b3"
+      "commit": "81ebfb3d08cd608a7c801668a6d5f7b2ea9ecc38"
     },
     "angular-protractor/angular-protractor.d.ts": {
-      "commit": "7af83a5376afd5a9d7088a38a85cfe3653cbf3b3"
+      "commit": "81ebfb3d08cd608a7c801668a6d5f7b2ea9ecc38"
     },
     "selenium-webdriver/selenium-webdriver.d.ts": {
-      "commit": "7af83a5376afd5a9d7088a38a85cfe3653cbf3b3"
+      "commit": "81ebfb3d08cd608a7c801668a6d5f7b2ea9ecc38"
     },
     "gulp/gulp.d.ts": {
-      "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+      "commit": "81ebfb3d08cd608a7c801668a6d5f7b2ea9ecc38"
     },
     "orchestrator/orchestrator.d.ts": {
-      "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+      "commit": "81ebfb3d08cd608a7c801668a6d5f7b2ea9ecc38"
     },
     "q/Q.d.ts": {
-      "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+      "commit": "81ebfb3d08cd608a7c801668a6d5f7b2ea9ecc38"
     }
   }
 }
